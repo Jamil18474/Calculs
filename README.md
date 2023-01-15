@@ -43,16 +43,16 @@ De base les utilisateurs sont "member"
 Il faut changer d'abord dans la base de donnée pour qu'il soit admin ou superadmin
 
 ## Postman
-Toutes les requêtes sont sur le Postman partagé par mail
-Pour récupérer le bearer token pour tester les requêtes il faut être soit admin soit superadmin et faire une requête en POST 
+Toutes les requêtes sont sur le Postman partagé par mail;
+Pour récupérer le bearer token et pour tester les requêtes il faut être soit admin soit superadmin et faire une requête en POST. 
 Pour la requête de mise à jour(update) d'un instrument j'ai dû utiliser post pour avoir accès au form-data car je charge une image mais j'ai précisé _method PATCH dans le form-data.
 
 ## Routes côté API
 ```
-// Users
+    // Users
 
     Route::apiResource('/users', UserController::class);
-    Route::post('/users/search', [RayonController::class, 'search']);
+    Route::post('/users/search', [UserController::class, 'search']);
 
     // Instruments
 
